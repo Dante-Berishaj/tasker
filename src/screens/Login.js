@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import classes from './Login.module.css';
 
 import Button from '../components/Button';
@@ -8,6 +8,8 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     //const [token, setToken] = useState('')
+
+    let history = useHistory()
 
     const loginHandler = async(event) => {
         event.preventDefault();
@@ -26,6 +28,7 @@ const Login = () => {
         let token = JSON.stringify(JSON.stringify(result.data.token))
         localStorage.setItem('data', JSON.stringify(result))
         localStorage.setItem('token', token);
+        history.push('/today')
     }
 
     return (

@@ -1,6 +1,7 @@
-import  Axios  from 'axios';
 import React, { useState } from 'react';
 import classes from './Register.module.css'
+
+import Button from '../components/Button';
 
 
 const Register = () => {
@@ -8,21 +9,28 @@ const Register = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-    const submitRegistrationHandler = async(event) => {
+    const registrationHandler = async(event) => {
         event.preventDefault();
 
-        Axios.post('https://tasker.zombiesoup.co/api/auth/register', {
-            email: email,
-            password: password,
-            password_confirmation: confirmPassword
-        }).then(response => {
-            console.log(response.data.data.token)
+        const result = await fetch('/auth/register', {
+            method: 'POST',
+            body: JSON.stringify({
+                email,
+                password,
+                password_confirmation: confirmPassword,
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            },
         })
+        const response = await result.json();
+        console.log(response);
     };
 
   return (
     <div className={classes.form}>
-        <form onSubmit={submitRegistrationHandler}>
+        <h1>Register</h1>
+        <form onSubmit={registrationHandler}>
             <div>
                 <label>
                     Email
@@ -53,7 +61,7 @@ const Register = () => {
                     onChange={event => setConfirmPassword(event.target.value)}
                 />
             </div>
-            <button type='submit'>Register</button>
+            <Button className={classes.register_btn} type='submit'>Register</Button>
         </form>
     </div>
   )

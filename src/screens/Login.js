@@ -1,5 +1,8 @@
 import React,{useState} from 'react';
 import { Link } from 'react-router-dom';
+import classes from './Login.module.css';
+
+import Button from '../components/Button';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -20,15 +23,17 @@ const Login = () => {
             body: JSON.stringify(data)
         });
         result = await result.json()
+        let token = JSON.stringify(JSON.stringify(result.data.token))
         localStorage.setItem('data', JSON.stringify(result))
-        localStorage.setItem('token', JSON.stringify(result.data.token));
+        localStorage.setItem('token', token);
     }
 
     return (
         <div>
             <form >
+            <h1>Login</h1>
                 <div>
-                    <h1>Login</h1>
+                    
                     <label>
                         Email
                     </label>
@@ -48,10 +53,12 @@ const Login = () => {
                         onChange={event => setPassword(event.target.value)}
                     />
                 </div>
-                <button type='submit' onClick={loginHandler}>Login</button>
+                <div className={classes.btn_group}>
+                <Button className={classes.login_btn} type='submit' onClick={loginHandler}>Login</Button>
                 <Link to='register'>
-                    <button>Register</button>
+                    <Button className={classes.register_btn}>Register</Button>
                 </Link>
+                </div>
             </form>
         </div>
       )

@@ -14,7 +14,6 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Nav />
-        <h1>Tasker</h1>
       <Switch>
         <Route path='/' exact component={Login} />
         <Route path='/register' exact component={Register} />

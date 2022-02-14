@@ -1,7 +1,5 @@
-.form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.register_btn{
+  background: rgb(18, 174, 246);
+  margin-top: 5rem;
   
-  
+}

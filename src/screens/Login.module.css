@@ -1,0 +1,18 @@
+.login_btn{
+    background: rgb(146, 243, 108);
+}
+
+.register_btn{
+    background: rgb(18, 174, 246);
+    margin-top: 1rem;
+}
+
+.btn_group{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5rem;
+
+}

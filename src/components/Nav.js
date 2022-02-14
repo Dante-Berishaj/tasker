@@ -6,6 +6,10 @@ const Nav = () => {
   return (
     <div className={classes.nav}>
         <ul>
+            <h1>Tasker</h1>
+            <li>
+                <Link to='/'>Log in</Link>
+            </li>
             <li>
                 <Link to='/Today'>Today</Link>
             </li>

@@ -1,10 +1,12 @@
 .login_btn{
     background: rgb(146, 243, 108);
+    padding: 0.5rem 5rem;
 }
 
 .register_btn{
     background: rgb(18, 174, 246);
     margin-top: 1rem;
+    padding: 0.5rem 4.5rem;
 }
 
 .btn_group{

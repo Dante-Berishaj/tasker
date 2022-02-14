@@ -21,4 +21,11 @@
     width: 7rem;
     text-decoration: none;
     white-space: nowrap;
+    text-decoration: none;
+    list-style: none;
+    color: blueviolet;
+}
+
+.nav h1{
+    margin-right: 35rem;
 }

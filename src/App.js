@@ -8,8 +8,7 @@ import Today from './screens/Today';
 import NewTask from './screens/NewTask';
 import NewCategory from './screens/NewCategory'
 
-
-function App() {
+const App = () => {
   return (
     <div className="App">
       <BrowserRouter>

@@ -1,0 +1,24 @@
+.nav  {
+    height: 5rem;
+    width: 100%;
+    border: 1px;
+    background-color: #f3e8e8;
+    border-color: black;
+}
+
+.nav ul {
+    height: 100%;
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav li {
+    margin: 0 1rem;
+    width: 7rem;
+    text-decoration: none;
+    white-space: nowrap;
+}

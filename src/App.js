@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter,  Route, Switch} from 'react-router-dom';
+import Nav from './components/Nav';
+import Login from './screens/Login';
+import Register from './screens/Register';
+import CategoryDetails from './screens/CategoryDetails';
+import Today from './screens/Today';
+import NewTask from './screens/NewTask';
+import NewCategory from './screens/NewCategory'
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Nav />
+        <h1>Tasker</h1>
+      <Switch>
+        <Route path='/' exact component={Login} />
+        <Route path='/register' exact component={Register} />
+        <Route path='/Today' exact component={Today} />
+        <Route path='/newTask' exact component={NewTask} />
+        <Route path='/newCategory' exact component={NewCategory} />
+        <Route path='/categoryDetails' exact component={CategoryDetails} />
+      </Switch>
+      </BrowserRouter>
     </div>
   );
 }

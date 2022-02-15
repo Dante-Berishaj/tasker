@@ -25,8 +25,8 @@ const Login = () => {
             body: JSON.stringify(data)
         });
         result = await result.json()
-        let token = JSON.stringify(JSON.stringify(result.data.token))
         localStorage.setItem('data', JSON.stringify(result))
+        let token = result.data.token;
         localStorage.setItem('token', token);
         history.push('/today')
     }

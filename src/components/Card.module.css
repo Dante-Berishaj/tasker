@@ -1,0 +1,14 @@
+.card{
+    background: rgb(251, 133, 133);
+    box-shadow: 0 2px 8px rgba(0,0,0, 0.26);
+    border-radius: 10px;
+    margin-top: 3rem;
+    overflow: hidden;
+    width: 50%;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    margin-left: 25%;
+}

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Card from '../components/Card';
 
 const Today = () => {
   const [allTasks, setAllTasks] = useState(null)
@@ -31,12 +32,12 @@ const Today = () => {
     <h1>Today Tasks</h1>
     <div>
       <h1>All tasks</h1>
-      {allTasks && allTasks.map((task, index) => (
-        <div key={index}>
+      {allTasks && allTasks.map((task) => (
+        <Card key={task.id}>
           <h2>{task.name}</h2>
           <h3>{task.due_date}</h3>
-          <h5>{task.completed === 1 ? "completed" : "not  completed"}</h5>
-        </div>
+          <h5>status: {task.completed === 1 ? "completed" : "not  completed"}</h5>
+        </Card>
       ))}
     </div>
     </>

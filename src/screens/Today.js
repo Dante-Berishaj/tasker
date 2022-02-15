@@ -35,7 +35,7 @@ const Today = () => {
         <div key={index}>
           <h2>{task.name}</h2>
           <h3>{task.due_date}</h3>
-          <h5>{task.completed}</h5>
+          <h5>{task.completed === 1 ? "completed" : "not  completed"}</h5>
         </div>
       ))}
     </div>

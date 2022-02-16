@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Button from '../components/Button';
-import Card from '../components/Card';
+import { Link } from 'react-router-dom';
 
 const Today = () => {
   const [categories, setCategories] = useState(null);
@@ -52,25 +52,25 @@ const Today = () => {
     {showCat && <div>
       <h1>All Categories</h1>
       <Button onClick={renderTodayHandler}>Show Today List</Button>
-      <form>
-        <input placeholder='name' />
-      </form>
       {categories && categories.map((cat) => (
+      <Link to={`/categoryDetails/${cat.id}`}>
         <div 
         key={cat.id} 
-        style={{backgroundColor: cat.color, 
-        width:'50%', 
-        justifyContent:'center', 
-        alignItems:'center', 
-        marginLeft: '25%', 
-        borderRadius: '12px', 
-        padding:'12px', 
-        marginTop:'3rem'
+        style={{
+          backgroundColor: cat.color, 
+          width:'50%', 
+          justifyContent:'center', 
+          alignItems:'center', 
+          marginLeft: '25%', 
+          borderRadius: '12px', 
+          padding:'12px', 
+          marginTop:'3rem'
         }}
         >
           <h2>{cat.name}</h2>
-          <h5>status: {cat.completed ? "completed" : "not  completed"}</h5>
+          <h5>Tasks: {cat.task_count}</h5>
         </div>
+      </Link>
       ))}
     </div>}
     </>

@@ -14,9 +14,6 @@ const Nav = () => {
                 <Link to='/Today'>Today</Link>
             </li>
             <li>
-                <Link to='/categoryDetails'>Category Details</Link>
-            </li>
-            <li>
                 <Link to='/newTask'>New Task</Link>
             </li>
             <li>

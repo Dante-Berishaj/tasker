@@ -19,7 +19,7 @@ const App = () => {
         <Route path='/Today' exact component={Today} />
         <Route path='/newTask' exact component={NewTask} />
         <Route path='/newCategory' exact component={NewCategory} />
-        <Route path='/categoryDetails' exact component={CategoryDetails} />
+        <Route path='/categoryDetails/:catId' exact component={CategoryDetails} />
       </Switch>
       </BrowserRouter>
     </div>

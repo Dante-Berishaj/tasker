@@ -56,11 +56,18 @@ const Login = () => {
                         onChange={event => setPassword(event.target.value)}
                     />
                 </div>
-                <div className={classes.btn_group}>
-                <Button className={classes.login_btn} type='submit' onClick={loginHandler}>Login</Button>
-                <Link to='register'>
-                    <Button className={classes.register_btn}>Register</Button>
-                </Link>
+                <div>
+                    <Button 
+                        className={classes.login_btn} 
+                        type='submit' 
+                        onClick={loginHandler}>
+                        Login
+                    </Button>
+                    <div>
+                        <Link to='register'>
+                            <Button className={classes.register_btn}>Register</Button>
+                        </Link>
+                    </div>
                 </div>
             </form>
         </div>

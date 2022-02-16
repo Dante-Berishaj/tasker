@@ -53,9 +53,8 @@ const Today = () => {
       <h1>All Categories</h1>
       <Button onClick={renderTodayHandler}>Show Today List</Button>
       {categories && categories.map((cat) => (
-      <Link to={`/categoryDetails/${cat.id}`}>
+      <Link to={`/categoryDetails/${cat.id}`} key={cat.id} >
         <div 
-        key={cat.id} 
         style={{
           backgroundColor: cat.color, 
           width:'50%', 

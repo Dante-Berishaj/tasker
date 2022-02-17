@@ -1,6 +1,14 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import Card from '../components/Card';
+import Button from '../components/Button';
 
+import classes from './categoryDetails.module.css'
+
+/*
+/api/lists/{id}/tasks didnt let me process data even though i gave the 
+bearer token in postman so I had to do it by filtering the tasks 
+task_list_id property with the current lists id
+*/
 const CategoryDetails = (props) => {
   const catId = props.match.params.catId;
 
@@ -41,6 +49,7 @@ const CategoryDetails = (props) => {
   useEffect(() => {
     getCurrentCategory();
     getTasks()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   let catTasks = tasks;
@@ -66,9 +75,11 @@ const CategoryDetails = (props) => {
         <h1>{currentCategory.name}</h1>
         <h5>Tasks: {currentCategory.task_count}</h5>
         {currTasks && currTasks.map(task => (
-          <div key={task.id}>
-            {task.name}
-          </div>
+          <Card key={task.id}>
+            <h1>{task.name}</h1>
+            <h5>{task.completed === 1 ? 'completed' : 'not complete'}</h5>
+            {task.completed === 0 && <Button className={classes.btn}> Complete </Button>}
+          </Card>
         ))
         }
       </div>

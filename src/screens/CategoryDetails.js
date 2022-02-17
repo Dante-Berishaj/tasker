@@ -8,12 +8,18 @@ import classes from './categoryDetails.module.css'
 /api/lists/{id}/tasks didnt let me process data even though i gave the 
 bearer token in postman so I had to do it by filtering the tasks 
 task_list_id property with the current lists id
+
+let TaskId = task.id
+              setTaskId(TaskId)
+              console.log(TaskId)
+              console.log(taskId)
 */
 const CategoryDetails = (props) => {
   const catId = props.match.params.catId;
 
   const [currentCategory, setCurrentCategory] = useState([]);
   const [tasks, setTasks] = useState([]);
+  const [taskId,  setTaskId] = useState();
 
   const getCurrentCategory = async() => {
     let token = localStorage.getItem('token')
@@ -54,14 +60,29 @@ const CategoryDetails = (props) => {
 
   let catTasks = tasks;
 
-  console.log(catTasks)
-
   let currTasks = catTasks.filter(task => {
     // eslint-disable-next-line eqeqeq
     return task.task_list_id == catId
-  })
+  });
 
-  console.log(currTasks)
+  const completeTask = async(id) => {
+    console.log(id)
+    let token = localStorage.getItem('token')
+    await fetch(`/tasks/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        "Authorization": `Bearer ` + token
+      },
+      body: JSON.stringify({
+        completed: 1
+      })
+    }).then(response => response.json())
+    .then(data => console.log(data))
+
+    window.location.reload();
+  }
 
   return (
     <>
@@ -78,7 +99,7 @@ const CategoryDetails = (props) => {
           <Card key={task.id}>
             <h1>{task.name}</h1>
             <h5>{task.completed === 1 ? 'completed' : 'not complete'}</h5>
-            {task.completed === 0 && <Button className={classes.btn}> Complete </Button>}
+            {task.completed === 0 && <Button onClick = { () => completeTask(task.id) } className={classes.btn}> Complete </Button>}
           </Card>
         ))
         }

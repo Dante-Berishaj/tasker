@@ -19,7 +19,6 @@ const CategoryDetails = (props) => {
 
   const [currentCategory, setCurrentCategory] = useState([]);
   const [tasks, setTasks] = useState([]);
-  const [taskId,  setTaskId] = useState();
 
   const getCurrentCategory = async() => {
     let token = localStorage.getItem('token')

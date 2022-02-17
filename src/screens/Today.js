@@ -19,7 +19,6 @@ const Today = () => {
     }).then(response => {
       return response.json();
     }).then(data  => {
-      console.log(data.data.lists)
       setCategories(data.data.lists);
       setTodayTasks(data.data.today_tasks);
     })

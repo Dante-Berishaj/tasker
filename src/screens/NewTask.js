@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom';
 
 import Button from '../components/Button'
+import classes from './NewTask.module.css';
 
 const NewTask = () => {
   const [name, setName] = useState('');
@@ -50,13 +51,15 @@ const NewTask = () => {
   }
 
   return (
-    <>
-      <h1>New Task</h1>
+    <div className={classes.main}>
+    <div className={classes.main_container}>
+      <h1>Add a new task</h1>
       <div>
         <form>
-          <input placeholder='name' onChange={(event) => setName(event.target.value)} />
+          <input className={classes.input} placeholder='name' onChange={(event) => setName(event.target.value)} />
           <div>
-           Category: <select onChange={(event) => setCategory(event.target.value)} placeholder='category'>
+           <div className={classes.select}>
+           <select onChange={(event) => setCategory(event.target.value)} placeholder='category'>
               <option>Select Category</option>
               {categories && categories.map(cat => (
                 <option value={cat.id} key={cat.id}>{cat.name}</option>
@@ -64,14 +67,16 @@ const NewTask = () => {
             </select>
           </div>
           <div>
-            <input placeholder='date' type="datetime-local" step="2" onChange={(event) => setDate(event.target.value)} />
+          <input className={classes.input} placeholder='date' type="datetime-local" step="2" onChange={(event) => setDate(event.target.value)} />
+          </div>
           </div>
           <div>
-            <Button onClick={NewTask}>Add New Task</Button>
+            <Button className={classes.btn} onClick={NewTask}>Add New Task</Button>
           </div>
         </form>
       </div>
-    </>
+      </div>
+    </div>
   )
 }
 

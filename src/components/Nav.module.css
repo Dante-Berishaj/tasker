@@ -2,7 +2,7 @@
     height: 5rem;
     width: 100%;
     border: 1px;
-    background-color: #f3e8e8;
+    background: rgb(18, 174, 246);
     border-color: black;
 }
 
@@ -23,9 +23,10 @@
     white-space: nowrap;
     text-decoration: none;
     list-style: none;
-    color: blueviolet;
+    color: #fff;
 }
 
 .nav h1{
     margin-right: 43rem;
+    color: #fff;
 }

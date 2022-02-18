@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import Button from '../components/Button';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Today = () => {
   const [categories, setCategories] = useState(null);
   const [todayTasks, setTodayTasks] = useState(null);
-  const [showCat, setShowCat] = useState(false);
-  const [showToday, setShowToday] = useState(true);
 
   const getAllCategoriesAndTodayTasks = async() => {
     let token = localStorage.getItem('token')
@@ -28,29 +25,20 @@ const Today = () => {
     getAllCategoriesAndTodayTasks()
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  
-  const renderCategoriesHandler = () => {
-     setShowCat(true);
-     setShowToday(false)
-   }
-
-   const renderTodayHandler = () => {
-     setShowCat(false);
-     setShowToday(true)
-   }
 
   return (
     <>
-    {showToday && <div><h1>Today Tasks</h1>
-    <Button onClick={renderCategoriesHandler}>Show Categories</Button>
+      <div>
+        <h1>Today Tasks</h1>
+
     {todayTasks && todayTasks.map(today => (
       <div key={'yes'}></div>
     ))}
     </div>
-    }
-    {showCat && <div>
-      <h1>All Categories</h1>
-      <Button onClick={renderTodayHandler}>Show Today List</Button>
+    
+     <div>
+      <h1>Lists:</h1>
+
       {categories && categories.map((cat) => (
       <Link to={`/categoryDetails/${cat.id}`} key={cat.id} >
         <div 
@@ -71,7 +59,7 @@ const Today = () => {
         </div>
       </Link>
       ))}
-    </div>}
+    </div>
     </>
   );
 };

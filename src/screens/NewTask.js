@@ -59,7 +59,7 @@ const NewTask = () => {
           <input className={classes.input} placeholder='name' onChange={(event) => setName(event.target.value)} />
           <div>
            <div className={classes.select}>
-           <select onChange={(event) => setCategory(event.target.value)} placeholder='category'>
+           <select onChange={(event) => setCategory(event.target.value)}>
               <option>Select Category</option>
               {categories && categories.map(cat => (
                 <option value={cat.id} key={cat.id}>{cat.name}</option>

@@ -28,7 +28,8 @@ const Login = () => {
         localStorage.setItem('data', JSON.stringify(result))
         let token = result.data.token;
         localStorage.setItem('token', token);
-        history.push('/today')
+        history.push('/today');
+        window.location.reload();
     }
 
     return (

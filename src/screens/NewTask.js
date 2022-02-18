@@ -75,4 +75,4 @@ const NewTask = () => {
   )
 }
 
-export default NewTask
+export default NewTask;

@@ -84,19 +84,18 @@ const CategoryDetails = (props) => {
   }
 
   return (
-    
       <div 
         style={{
-          background: currentCategory.color,
-          margin: '0px',
+          backgroundColor: currentCategory.color,
           width: '100%',
-          height: '100vh'
+          height: '100%',
+          minHeight:'100vh'
         }}
       >
         <h1>{currentCategory.name}</h1>
         <h5>Tasks: {currentCategory.task_count}</h5>
         {currTasks && currTasks.map(task => (
-          <Card className={classes.card} key={task.id}>
+          <Card key={task.id}>
             <h1>{task.name}</h1>
             <h5>{task.completed === 1 ? 'completed' : 'not complete'}</h5>
             {task.completed === 0 && <Button onClick = { () => completeTask(task.id) } className={classes.btn}> Complete </Button>}

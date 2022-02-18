@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import classes from './Register.module.css'
 
 import Button from '../components/Button';
-
+import logo from '../logo.png'
 
 const Register = () => {
     const [email, setEmail] = useState('');
@@ -30,7 +30,7 @@ const Register = () => {
   return (
     <div className={classes.main}>
         <div className={classes.main_container}>
-        <h1>Register</h1>
+        <img className={classes.img} src={logo} alt="Logo" />
         <form onSubmit={registrationHandler}>
             <div className={classes.labInp_container}>
                 <label>

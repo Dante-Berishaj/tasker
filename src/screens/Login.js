@@ -3,6 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import classes from './Login.module.css';
 
 import Button from '../components/Button';
+import logo from '../logo.png';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -36,7 +37,7 @@ const Login = () => {
     <div className={classes.main}>
         <div className={classes.main_container}>
             <form >
-            <h1>Login</h1>
+            <img className={classes.img} src={logo} alt="Logo" />
                 <div className={classes.labInp_container}>
                     <label>
                         Email

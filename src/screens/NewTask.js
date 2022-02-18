@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom';
+
 import Button from '../components/Button'
 
 const NewTask = () => {
@@ -6,6 +8,8 @@ const NewTask = () => {
   const [category, setCategory] = useState('');
   const [date, setDate] = useState('');
   const [categories, setCategories] = useState(null);
+
+  const history = useHistory()
 
   const getCategories = async() => {
     let token = localStorage.getItem('token')
@@ -41,6 +45,8 @@ const NewTask = () => {
     })
     result = await result.json()
     console.log(result)
+    
+    history.push(`/categoryDetails/${category}`)
   }
 
   return (

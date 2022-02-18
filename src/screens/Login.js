@@ -32,7 +32,7 @@ const Login = () => {
     }
 
     return (
-        <div>
+        <>
             <form >
             <h1>Login</h1>
                 <div>
@@ -70,7 +70,7 @@ const Login = () => {
                     </div>
                 </div>
             </form>
-        </div>
+        </>
       )
 };
 

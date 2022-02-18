@@ -28,7 +28,7 @@ const Register = () => {
     };
 
   return (
-    <div className={classes.form}>
+    <>
         <h1>Register</h1>
         <form onSubmit={registrationHandler}>
             <div>
@@ -63,7 +63,7 @@ const Register = () => {
             </div>
             <Button className={classes.register_btn} type='submit'>Register</Button>
         </form>
-    </div>
+    </>
   )
 };
 

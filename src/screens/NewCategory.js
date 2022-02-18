@@ -25,7 +25,7 @@ const NewCategory = () => {
   }
 
   return (
-    <div>
+    <>
       NewCategory
       <form>
         <input placeholder='name' onChange={event => setName(event.target.value)} /> 
@@ -34,7 +34,7 @@ const NewCategory = () => {
         </div>
       </form>
       <Button onClick={AddNewCategory}>Add New Category</Button>
-    </div>
+    </>
   )
 }
 

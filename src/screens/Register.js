@@ -28,34 +28,38 @@ const Register = () => {
     };
 
   return (
-    <>
+    <div className={classes.main}>
+        <div className={classes.main_container}>
         <h1>Register</h1>
         <form onSubmit={registrationHandler}>
-            <div>
+            <div className={classes.labInp_container}>
                 <label>
                     Email
                 </label>
                 <input 
+                    className={classes.input}
                     type='email'
                     value={email}
                     onChange={event => setEmail(event.target.value)}
                 />
             </div>
-            <div>
+            <div className={classes.labInp_container}>
                 <label>
                     Password
                 </label>
                 <input 
+                    className={classes.input}
                     type='password' 
                     value={password}
                     onChange={event => setPassword(event.target.value)}
                 />
             </div>
-            <div>
+            <div className={classes.labInp_container}>
                 <label>
                     Confirm Password
                 </label>
                 <input 
+                className={classes.input}
                     type='password' 
                     value={confirmPassword}
                     onChange={event => setConfirmPassword(event.target.value)}
@@ -63,7 +67,8 @@ const Register = () => {
             </div>
             <Button className={classes.register_btn} type='submit'>Register</Button>
         </form>
-    </>
+        </div>
+    </div>
   )
 };
 

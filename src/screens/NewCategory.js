@@ -6,11 +6,22 @@ const NewCategory = () => {
   const [name, setName] = useState('');
   const [color, setColor] = useState('');
 
-  const AddNewCategory = (event) => {
+  const AddNewCategory = async(event) => {
     event.preventDefault();
     const data = {name, color};
-    
-    fetch('/lists')
+    let token = localStorage.getItem('token');
+    //console.log(token)
+    let result = await fetch('/lists', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        "Authorization": `Bearer ` + token,
+      },
+      body: JSON.stringify(data)
+    })
+    result = await result.json()
+    console.log(result)
   }
 
   return (

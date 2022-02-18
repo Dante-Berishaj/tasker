@@ -62,7 +62,8 @@ const Today = () => {
           marginLeft: '25%', 
           borderRadius: '12px', 
           padding:'12px', 
-          marginTop:'3rem'
+          marginTop:'3rem',
+          marginBottom: '3rem'
         }}
         >
           <h2>{cat.name}</h2>

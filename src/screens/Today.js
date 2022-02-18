@@ -44,7 +44,7 @@ const Today = () => {
     {showToday && <div><h1>Today Tasks</h1>
     <Button onClick={renderCategoriesHandler}>Show Categories</Button>
     {todayTasks && todayTasks.map(today => (
-      <div></div>
+      <div key={'yes'}></div>
     ))}
     </div>
     }

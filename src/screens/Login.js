@@ -33,25 +33,27 @@ const Login = () => {
     }
 
     return (
-        <>
+    <div className={classes.main}>
+        <div className={classes.main_container}>
             <form >
             <h1>Login</h1>
-                <div>
-                    
+                <div className={classes.labInp_container}>
                     <label>
                         Email
                     </label>
                     <input 
+                        className={classes.input}
                         value={email}
                         type='email'
                         onChange={event => setEmail(event.target.value)}
                     />
                 </div>
-                <div>
+                <div className={classes.labInp_container}>
                     <label>
                         Password
                     </label>
                     <input 
+                        className={classes.input}
                         value={password}
                         type='password' 
                         onChange={event => setPassword(event.target.value)}
@@ -71,7 +73,8 @@ const Login = () => {
                     </div>
                 </div>
             </form>
-        </>
+        </div>
+        </div>
       )
 };
 

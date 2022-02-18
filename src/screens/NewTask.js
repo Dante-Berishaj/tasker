@@ -26,9 +26,21 @@ const NewTask = () => {
     getCategories()
    }, [])
 
-  const NewTask = () => {
+  const NewTask = async() => {
     let currDate = date.replace('T', ' ') 
-    console.log(name, category, currDate)
+    const data = {name, task_list_id: category, due_date: currDate }
+    let token = localStorage.getItem('token');
+    let result = await fetch('/tasks', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        "Authorization": `Bearer ` + token,
+      },
+      body: JSON.stringify(data)
+    })
+    result = await result.json()
+    console.log(result)
   }
 
   return (
@@ -39,6 +51,7 @@ const NewTask = () => {
           <input placeholder='name' onChange={(event) => setName(event.target.value)} />
           <div>
            Category: <select onChange={(event) => setCategory(event.target.value)} placeholder='category'>
+              <option>Select Category</option>
               {categories && categories.map(cat => (
                 <option value={cat.id} key={cat.id}>{cat.name}</option>
               ))}

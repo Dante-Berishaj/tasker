@@ -1,3 +1,8 @@
 .btn{
     background: rgb(17, 94, 107);
 }
+
+.card {
+    height: 100vh;
+    margin: 0px;
+}

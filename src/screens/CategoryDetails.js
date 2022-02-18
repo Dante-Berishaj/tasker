@@ -84,18 +84,19 @@ const CategoryDetails = (props) => {
   }
 
   return (
-    <>
+    
       <div 
         style={{
           background: currentCategory.color,
+          margin: '0px',
           width: '100%',
-          height: '100%'
+          height: '100vh'
         }}
       >
         <h1>{currentCategory.name}</h1>
         <h5>Tasks: {currentCategory.task_count}</h5>
         {currTasks && currTasks.map(task => (
-          <Card key={task.id}>
+          <Card className={classes.card} key={task.id}>
             <h1>{task.name}</h1>
             <h5>{task.completed === 1 ? 'completed' : 'not complete'}</h5>
             {task.completed === 0 && <Button onClick = { () => completeTask(task.id) } className={classes.btn}> Complete </Button>}
@@ -103,7 +104,6 @@ const CategoryDetails = (props) => {
         ))
         }
       </div>
-    </>
   );
 };
 

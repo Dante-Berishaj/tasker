@@ -5,7 +5,6 @@ import classes from './Nav.module.css';
 const Nav = () => {
 
     let token = localStorage.getItem('token')
-    console.log(token)
     
     let content =  <ul>
     <h1>Tasker</h1>
@@ -23,9 +22,6 @@ const Nav = () => {
     if(!token){
         content = <ul>
             <h1>Tasker</h1>
-        <li>
-            <Link to='/'>Log in</Link>
-        </li>
         </ul>
     }
 

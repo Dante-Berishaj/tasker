@@ -9,7 +9,7 @@ task_list_id property with the current lists id
     "code": 401
 }
 
-
+the app fetches /dashboard today_tasks but could not figure out how to post. Could've filtered tasks again to render only tasks that are due today*?*!? but decided not to
 
 
 no redux

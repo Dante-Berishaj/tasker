@@ -9,7 +9,9 @@ task_list_id property with the current lists id
     "code": 401
 }
 
-the app fetches /dashboard today_tasks but could not figure out how to post. Could've filtered tasks again to render only tasks that are due today*?*!? but decided not to
+the app fetches /dashboard today_tasks but could not figure out how to post. Could've filtered tasks again to render only tasks that are due today*?*!? but decided not to.
+
+In new category screen i used a select to show 4 colors for the new category. Could've added more.
 
 
 no redux

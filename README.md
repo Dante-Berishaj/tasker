@@ -15,4 +15,4 @@ the app fetches /dashboard today_tasks but could not figure out how to post. Cou
 no redux
 not responsive
 
-to run: the standard npm i => npm start
+to run: the standard npm i => npm start, didnt do any shenanigans.
